@@ -13,6 +13,7 @@ myWD <- getwd()
   ## This function will automatically load packages that you already have
   ## and will install packages you don't yet have then load them
 ipak <- function(pkg){
+  # Function written by Dr. Evan Fricke
   new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
   if (length(new.pkg)) 
     install.packages(new.pkg, dependencies = T)
@@ -20,7 +21,7 @@ ipak <- function(pkg){
 }
 
 # Define the packages that the script needs
-myPackages <- c("tidyverse", "randomForest", "permimp", "car", "vegan")
+myPackages <- c("tidyverse", "randomForest", "permimp", "vegan")
 
 # Load the packages
 ipak(myPackages)
